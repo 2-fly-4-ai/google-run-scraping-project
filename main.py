@@ -17,11 +17,13 @@ from selenium_stealth import stealth
 load_dotenv()
 app = Flask(__name__)
 
+
+apiKey = os.getenv('SPM_APIKEY')
 # Proxy configuration
 proxy_options = {
     'proxy': {
-        'http': 'http://4ff8c485e6bd4438b268866d4ce0dbe0:@api.zyte.com:8011',
-        'https': 'http://4ff8c485e6bd4438b268866d4ce0dbe0:@api.zyte.com:8011',
+        'http': 'http://{apiKey}:@api.zyte.com:8011',
+        'https': 'http://{apiKey}:@api.zyte.com:8011',
         'no_proxy': 'localhost,127.0.0.1'
     }
 }
